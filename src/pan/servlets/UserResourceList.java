@@ -22,7 +22,7 @@ public class UserResourceList extends HttpServlet {
 		response.setCharacterEncoding("utf-8");
 		
 		String id=request.getParameter("id");
-		System.out.println(id);
+		
 		ArrayList<UserFile> userFileList=new FileAndUserDao().getFileList(id);
 		
 		String file="";
@@ -38,7 +38,7 @@ public class UserResourceList extends HttpServlet {
 			}
 			a++;
 		}
-		System.out.println(file);
+		
 		if(file.equals("")){
 			response.getOutputStream().write("null".getBytes());
 		}else{
