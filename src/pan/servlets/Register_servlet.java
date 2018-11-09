@@ -19,19 +19,16 @@ public class Register_servlet extends HttpServlet {
 		
 		String username=request.getParameter("username");
 		String password=request.getParameter("password");
-		System.out.println(username+","+password);
 		UserDao ud=new UserDao();
 		if(!ud.contains(username)){
 			
 			boolean a=ud.insertUser(username, password);
-			System.out.println(a);
 			if(a){
 			response.getOutputStream().write("SUCCESS".getBytes());
 			}else{
-			System.out.println("发生未知错误，添加数据库信息失败");
+			System.out.println("鍙戠敓鏈煡閿欒锛屾坊鍔犳暟鎹簱淇℃伅澶辫触");
 			}
 		}else{
-			System.out.println(false);
 			response.getOutputStream().write("FAIL".getBytes());
 		}
 		
