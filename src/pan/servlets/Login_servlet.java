@@ -19,7 +19,6 @@ public class Login_servlet extends HttpServlet {
 		
 		String username=request.getParameter("username");
 		String password=request.getParameter("password");
-		System.out.println("username:"+username+",password:"+password);
 		UserDao ud=new UserDao();
 		int userId=-1;
 		if((userId=ud.isUser(username, password))!=-1){
